@@ -1,1 +1,60 @@
+.Content-Style {
+  width: 600px;
+  height: 1000px;
+  background: repeating-conic-gradient(#fff, #fff 6deg,#f9d6ce 6deg 12deg);
+}
 
+.Top-Header {
+  display: flex;
+  width: 600px;
+  height: 60px;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.Login-Form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 600px;
+  margin-top: 200px;
+}
+
+.Form-Style {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  background-color: #f1f1f1;
+  border-radius: 10px;
+  opacity: 0.8;
+}
+
+.Input-UserName {
+  display: flex;
+  justify-content: center;
+  width: 320px;
+  padding: 3px;
+  margin: 5px 0;
+  border-bottom: 1px solid ;
+}
+
+.Input-Pass {
+  display: flex;
+  justify-content: center;
+  width: 320px;
+  padding: 3px;
+  margin: 5px 0;
+  border-bottom: 1px solid ;
+}
+
+.Submit {
+  display: flex;
+  justify-content: center;
+  width: 100px;
+  margin: 16px 0;
+  padding: 4px;
+  border-radius: 8px;
+  background-color: aqua;
+}
