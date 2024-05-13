@@ -1,1 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
 
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Conpatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>こけしおみくじ</title>
+  <link rel="stylesheet" href="./resources/styles/destyle.css" />
+  <link rel="stylesheet" href="./resources/styles/style.css" />
+</head>
+
+<body>
+  <div class="Content-Style">
+    <header class="Top-Header">
+      <h1 class="Title">kokesi olacre</h1>
+    </header>
+    <article class="Main">
+      <div class="Main-Title">こけしおみくじ</div>
+    </article>
+    <form class="Login-Form" action="action.html">
+      <button id="Use-Button">
+        30  こけし<br>使って占う</button>
+    </form>
+
+
+
+
+  </div>
+  <script>
+
+    const useButton = document.getElementById('Use-Button');
+
+    useButton.addEventListener('touchstart', function () {
+      useButton.classList.add('active');
+    });
+
+    useButton.addEventListener('touchend', function () {
+      useButton.classList.remove('active');
+    });
+
+    useButton.addEventListener('click', function() {
+  useButton.style.backgroundColor = '#CD5C5C';
+});
+
+  </script>
+
+
+</body>
+
+</html>

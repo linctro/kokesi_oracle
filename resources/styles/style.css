@@ -1,7 +1,7 @@
 .Content-Style {
   width: 600px;
   height: 1000px;
-  background: repeating-conic-gradient(#fff, #fff 6deg,#f9d6ce 6deg 12deg);
+  background: repeating-conic-gradient(#fff, #fff 6deg, #f9d6ce 6deg 12deg);
 }
 
 .Top-Header {
@@ -10,7 +10,25 @@
   height: 60px;
   justify-content: center;
   align-items: center;
-  
+
+}
+
+.Main {
+  display: flex;
+  width: 600px;
+  height: 300px;
+  justify-content: center;
+  align-items: center;
+}
+
+.Main-Title {
+  color: #fd2736;
+  font-size: 56px;
+  font-family: 'Hiragino Kaku Gothic';
+  font-weight: bold;
+  -webkit-text-stroke: 2px #fff;
+  background-color: #f6c3b9;
+  border-radius: 8px;
 }
 
 .Login-Form {
@@ -18,7 +36,7 @@
   align-items: center;
   justify-content: center;
   width: 600px;
-  margin-top: 200px;
+  margin-top: 50px;
 }
 
 .Form-Style {
@@ -37,7 +55,7 @@
   width: 320px;
   padding: 3px;
   margin: 5px 0;
-  border-bottom: 1px solid ;
+  border-bottom: 1px solid;
 }
 
 .Input-Pass {
@@ -46,7 +64,7 @@
   width: 320px;
   padding: 3px;
   margin: 5px 0;
-  border-bottom: 1px solid ;
+  border-bottom: 1px solid;
 }
 
 .Submit {
@@ -57,4 +75,46 @@
   padding: 4px;
   border-radius: 8px;
   background-color: aqua;
+}
+
+#Use-Button {
+  text-align: center;
+  background-color: #FFD700;
+  color: black;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  border: none;
+  padding: 20px 80px;
+  cursor: pointer;
+  border-radius: 30px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  /* 影の設定 */
+}
+
+#Use-Button :hover {
+  background-color: #F0E68C;
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+  /* タッチ時の影 */
+}
+
+#Use-Button :active {
+  background-color: #CD5C5C;
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+  /* タッチ時の影 */
+}
+
+.Buttons {
+  width: 70px;
+  height: 70px;
+  margin: 5px;
+  padding-top: 22px;
+  display: flex;
+  justify-content: center;
+  border: 3.5px solid #2b3a75;
+  border-radius: 50%;
+  color: #2b3a75;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 22px;
 }
