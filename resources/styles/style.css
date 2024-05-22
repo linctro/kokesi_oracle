@@ -104,11 +104,45 @@
   /* タッチ時の影 */
 }
 
+.Kokesi-Pic {
+  display: flex;
+  justify-content: center;
+  width: 600px;
+  height: auto;
+  margin-top: 80px;
+}
+
+.Kokesi-Image {
+  position: relative;
+  width: 150px;
+  border-radius: 50%;
+  transition: transform 0.1s ease-in-out; /* アニメーション設定 */
+}
+
+.Omikuji-Image {
+  position: absolute;
+  top: 15px;
+  width: 530px;
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.Action-Button {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ margin-top: 50px;
+}
+
+.Action-Button-Draw{
+  display: flex;
+  justify-content: center;
+}
+
 .Buttons {
-  width: 70px;
-  height: 70px;
-  margin: 5px;
-  padding-top: 22px;
+  width: 150px;
+  height: 150px;
+  margin: 30px;
+  padding-top: 45px;
   display: flex;
   justify-content: center;
   border: 3.5px solid #2b3a75;
@@ -116,5 +150,40 @@
   color: #2b3a75;
   font-family: sans-serif;
   font-weight: bold;
-  font-size: 22px;
+  font-size: 55px;
+}
+
+.Shake-Button {
+  width: 150px;
+  height: 150px;
+  margin: 30px;
+  padding-top: 45px;
+  display: flex;
+  justify-content: center;
+  border: 3.5px solid #2b3a75;
+  border-radius: 50%;
+  color: #2b3a75;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 55px;
+  cursor: pointer;
+}
+
+.Kokesi-Image.shake { /* 揺らす時のスタイル */
+  transform: translate(-10px, 20px); /* 少し右上にオフセット */
+}
+
+#Re-Draw {
+  text-align: center;
+  background-color: #FFD700;
+  color: black;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  border: none;
+  padding: 20px 80px;
+  cursor: pointer;
+  border-radius: 30px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  /* 影の設定 */
 }

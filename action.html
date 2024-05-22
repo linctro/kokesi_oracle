@@ -15,20 +15,60 @@
     <header class="Top-Header">
       <h1 class="Title">kokesi olacre</h1>
     </header>
+
     <article class="Main">
-      <div class="Main-Title">こけしおみくじ</div>
+      <div class="Kokesi-Pic">
+        <img src="resources/images/kokesi.png" alt="kokesi" class="Kokesi-Image" />
+        <img src="resources/images/kokesi_sample_00" alt="omikuji" class="Omikuji-Image"
+          style="opacity: 0; transform: scale(0.5);" />
+      </div>
     </article>
-    <button type="button" id="button" class="Buttons">振る</button>
-    <button type="button" id="reset" class="Buttons">引く</button>
 
-
+    <div class="Action-Button">
+      <div class="Action-Button-Draw">
+      <button type="button" id="button" class="Shake-Button">振る</button>
+      <button type="button" id="draw" class="Buttons">引く</button>
+      </div>
+      <button type="button" id="Re-Draw" style="display: none;">もう１回</button>
+    </div>
 
 
 
   </div>
   <script>
 
- 
+    const image = document.querySelector('.Kokesi-Image');
+    const omikujiImage = document.querySelector('.Omikuji-Image')
+    const shakeButton = document.querySelector('.Shake-Button');
+    const draw = document.getElementById('draw');
+    const reDraw = document.getElementById('Re-Draw');
+
+    let shakeCount = 3; // 揺らし回数
+
+    draw.addEventListener('click', function () {
+      let randomNumber = Math.floor(Math.random() * 4 + 1);
+
+      document.getElementsByClassName("Omikuji-Image")
+      [0].setAttribute('src', 'resources/images/kokesi_sample_0' + randomNumber + '.png')
+
+      omikujiImage.style.opacity = 1;
+      omikujiImage.style.transform = 'scale(1)';
+      reDraw.style.display = 'inline-block';
+    });
+
+    shakeButton.addEventListener('click', () => {
+      for (let i = 0; i < shakeCount; i++) {
+        image.classList.add('shake'); // 揺らす時のスタイルを適用
+
+        setTimeout(() => {
+          image.classList.remove('shake'); // 0.5秒後に元に戻す
+        }, 200);
+      }
+    });
+
+    reDraw.addEventListener('click', function () {
+      location.href = 'usepoint.html';
+    });
 
   </script>
 
