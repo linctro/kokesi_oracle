@@ -1,12 +1,12 @@
 .Content-Style {
-  width: 600px;
+  width: 400px;
   height: 1000px;
   background: repeating-conic-gradient(#fff, #fff 6deg, #f9d6ce 6deg 12deg);
 }
 
 .Top-Header {
   display: flex;
-  width: 600px;
+  width: 400px;
   height: 60px;
   justify-content: center;
   align-items: center;
@@ -15,7 +15,7 @@
 
 .Main {
   display: flex;
-  width: 600px;
+  width: 400px;
   height: 300px;
   justify-content: center;
   align-items: center;
@@ -35,7 +35,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 600px;
+  width: 400px;
   margin-top: 50px;
 }
 
@@ -107,7 +107,7 @@
 .Kokesi-Pic {
   display: flex;
   justify-content: center;
-  width: 600px;
+  width: 400px;
   height: auto;
   margin-top: 80px;
 }
@@ -122,7 +122,7 @@
 .Omikuji-Image {
   position: absolute;
   top: 15px;
-  width: 530px;
+  width: 390px;
   transition: opacity 1s ease-in-out, transform 1s ease-in-out;
 }
 
