@@ -13,6 +13,11 @@
 
 }
 
+#kokeshiContainer {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #006f86;
+}
+
 .Main {
   display: flex;
   width: 395px;
@@ -105,9 +110,10 @@
 }
 
 .Kokesi-Pic {
+  position: relative;
   display: flex;
   justify-content: center;
-  width: 400px;
+  width: 100%;
   height: auto;
   margin-top: 80px;
 }
@@ -116,24 +122,27 @@
   position: relative;
   width: 150px;
   border-radius: 50%;
-  transition: transform 0.1s ease-in-out; /* アニメーション設定 */
+  transition: transform 0.1s ease-in-out;
+  /* アニメーション設定 */
 }
 
 .Omikuji-Image {
   position: absolute;
-  top: 150px;
-  width: 390px;
+  top: 36px;
+  left: 2px;
+  width: 100%;
+  height: auto;
   transition: opacity 1s ease-in-out, transform 1s ease-in-out;
 }
 
 .Action-Button {
- display: flex;
- flex-direction: column;
- align-items: center;
- margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
 }
 
-.Action-Button-Draw{
+.Action-Button-Draw {
   display: flex;
   justify-content: center;
 }
@@ -143,15 +152,22 @@
   height: 110px;
   margin-top: 30px;
   margin-left: 30px;
-  padding-top: 35px;
+  padding-top: 28px;
   display: flex;
-  justify-content: center;
-  border: 3.5px solid #2b3a75;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(255, 215, 0, 0.6);
+  border: 3.5px solid #006f86;
   border-radius: 50%;
-  color: #2b3a75;
+  color: #006f86;
   font-family: sans-serif;
   font-weight: bold;
-  font-size: 50px;
+  font-size: 40px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.Buttons-text {
+  font-size: 18px;
 }
 
 .Shake-Button {
@@ -159,20 +175,24 @@
   height: 110px;
   margin-top: 30px;
   margin-right: 30px;
-  padding-top: 35px;
+  padding-top: 33px;
   display: flex;
   justify-content: center;
-  border: 3.5px solid #2b3a75;
+  background-color: rgba(255, 215, 0, 0.6);
+  border: 3.5px solid #006f86;
   border-radius: 50%;
-  color: #2b3a75;
+  color: #006f86;
   font-family: sans-serif;
   font-weight: bold;
-  font-size: 50px;
+  font-size: 45px;
   cursor: pointer;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
-.Kokesi-Image.shake { /* 揺らす時のスタイル */
-  transform: translate(-10px, 20px); /* 少し右上にオフセット */
+.Kokesi-Image.shake {
+  /* 揺らす時のスタイル */
+  transform: translate(-10px, 20px);
+  /* 少し右上にオフセット */
 }
 
 #Re-Draw {

@@ -20,11 +20,11 @@
     <article class="Main">
       <div class="Main-Title">こけしおみくじ</div>
     </article>
-    <form id="loginForm" class="Login-Form" action="usepoint.html">
+    <form id="loginForm" class="Login-Form" action="action.html">
       <div class="Form-Style">
         <div class="Input-UserName">
           <label for="username">ユーザーID:</label>
-          <input type="text" id="username" placeholder="exsample@kokesi.com" required />
+          <input type="text" id="userId" placeholder="exsample@kokesi.com" required />
         </div>
         <div class="Input-Pass">
           <label for="pass">パスワード:</label>
@@ -42,18 +42,18 @@
     document.getElementById('loginForm').addEventListener('submit', async function (event) {
       event.preventDefault();
 
-      const username = document.getElementById('username').value;
+      const userId = document.getElementById('userId').value;
       const password = document.getElementById('password').value;
 
       const applicationId = 'F836FFE2-AA5B-8A23-FF17-4DA921B9C900';
       const restApiKey = '2AD3A779-0802-4F6E-BC18-ED592E6BEAC1';
 
-      const whereClause = `id = '${username}' AND password = '${password}'`;
+      const whereClause = `id = '${userId}' AND password = '${password}'`;
       const encodedWhereClause = encodeURIComponent(whereClause);
 
       const url = `https://api.backendless.com/${applicationId}/${restApiKey}/data/UsersTable?where=${encodedWhereClause}`;
 
-      console.log('Login attempt', { username, password });
+      console.log('Login attempt', { userId, password });
 
 
       try {
@@ -70,6 +70,7 @@
         }
 
         const userData = await response.json();
+        console.log(userData);
 
         if (userData.length === 0) {
           alert('ﾕｰｻﾞｰIDまたはパスワードが正しくありません');
@@ -79,7 +80,10 @@
         const user = userData[0];
         console.log('ログイン成功:', user);
 
-        const pointUrl = `https://api.backendless.com/${applicationId}/${restApiKey}/data/UserData?where=id='${username}'`;
+        localStorage.setItem('userId', userData[0].id);
+        console.log(userId);
+
+        const pointUrl = `https://api.backendless.com/${applicationId}/${restApiKey}/data/UserData?where=id='${userId}'`;
 
         const pointResponse = await fetch(pointUrl, {
           method: 'GET',
@@ -96,7 +100,7 @@
         console.log('ポイントデータ:', pointData);
 
         localStorage.setItem('userPoints', JSON.stringify(pointData));
-        window.location.href = 'usepoint.html';
+        window.location.href = 'action.html';
 
       } catch (error) {
         console.error('Error', error);
