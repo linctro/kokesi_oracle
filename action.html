@@ -233,7 +233,7 @@
     document.getElementById('tweetButton').addEventListener('click', function () {
       const text = encodeURIComponent('本日のこけしおみくじです！');
       const url = encodeURIComponent(currentImageUrl);
-      const tweetUrl = `https://twitter.com/intent/tweet?text=${text}&url=${url}`;
+      const tweetUrl = `https://twitter.com/intent/tweet?text=${text}&url=${url}&via=hioking2010&hashtags=こけしおみくじ`;
 
       window.open(tweetUrl, '_blank'); // 新しいタブで開く
     });
