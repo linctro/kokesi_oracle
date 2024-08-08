@@ -232,8 +232,8 @@
 
     document.getElementById('tweetButton').addEventListener('click', function () {
       const text = encodeURIComponent('本日のこけしおみくじです！');
-      const url = encodeURIComponent(currentImageUrl);
-      const tweetUrl = `https://twitter.com/intent/tweet?text=${text}&url=https://github.com/linctro/kokesi_oracle/blob/main/${url}&via=hioking2010&hashtags=こけしおみくじ`;
+      const url = encodeURIComponent(`https://github.com/linctro/kokesi_oracle/blob/main/${currentImageUrl}`);
+      const tweetUrl = `https://twitter.com/intent/tweet?text=${text}&url=${url}&via=hioking2010&hashtags=こけしおみくじ`;
 
       window.open(tweetUrl, '_blank'); // 新しいタブで開く
     });
