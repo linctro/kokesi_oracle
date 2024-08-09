@@ -30,6 +30,7 @@
         <button type="button" id="draw" class="Buttons">引く<p class="Buttons-text">30本消費</p></button>
       </div>
       <button type="button" id="Re-Draw" style="display: none;">もう１回</button>
+      <button type="button" id="saveButton" style="display: none;">保存する</button>
       <button type="button" id="tweetButton" style="display: none;">Xに投稿する</button>
     </div>
 
@@ -79,8 +80,10 @@
         console.log('Fetched data:', pointData);  // デバッグ用ログ
 
         if (Array.isArray(pointData) && pointData.length > 0) {
-          displayPoints(pointData[0]);
-          return pointData[0];
+          const user = pointData[0];
+          displayPoints(user);
+          checkDrawButtonState(user.kokeshi);
+          return user;
         } else {
           displayNoData();
         }
@@ -122,6 +125,21 @@
       }
     }
 
+    //kokeshiが30未満の時のボタンの色の変化
+    function checkDrawButtonState(kokeshiCount) {
+      const drawButton = document.getElementById('draw');
+
+      if (kokeshiCount < 30) {
+        drawButton.disabled = true;
+        drawButton.style.backgroundColor = 'gray';
+        drawButton.style.cursor = 'not-allowed';
+      } else {
+        drawButton.disabled = false;
+        drawButton.style.backgroundColor = '';
+        drawButton.style.cursor = '';
+      }
+    }
+
     function displayPoints(point) {
       console.log('Displaying point:', point);  // デバッグ用ログ
 
@@ -135,6 +153,8 @@
       //const updateInfo = document.createElement('p');
       //updateInfo.textContent = `更新日時: ${new Date(point.created).toLocaleString()}`;
       //kokeshiContainer.appendChild(updateInfo);
+
+      checkDrawButtonState(point.kokeshi);
     }
 
     function displayNoData() {
@@ -152,6 +172,7 @@
         displayError('予期せぬエラーが発生しました');
       });
     });
+
 
     const image = document.querySelector('.Kokesi-Image');
     const omikujiImage = document.querySelector('.Omikuji-Image')
@@ -189,11 +210,14 @@
 
       //Xへ投稿ボタンを表示する
       document.getElementById('tweetButton').style.display = 'inline-block';
+      document.getElementById('saveButton').style.display = 'inline-block';
 
     }
 
     draw.addEventListener('click', async function () {
       console.log('draw button clicked'); // デバッグ用ログ
+
+      if (draw.disabled) return; //ボタンが有効でなければ処理を終了する
       displayRandomImage();
 
       omikujiImage.style.opacity = 1;
@@ -230,6 +254,18 @@
       }
     });
 
+    //ボタンを押してユーザーストレージへ画像保存
+    document.getElementById('saveButton').addEventListener('click', function () {
+
+      const link = document.createElement('a');
+      link.href = `https://kokesi-omikuji.netlify.app/${currentImageUrl}`;
+      link.download = `${randomImage}`; // 保存するファイル名
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    });
+
+    //ボタン押してXにページ移動
     document.getElementById('tweetButton').addEventListener('click', function () {
       const text = encodeURIComponent('本日のこけしおみくじです！');
       //const url = encodeURIComponent(`https://kokesi-omikuji.netlify.app/${currentImageUrl}`);
