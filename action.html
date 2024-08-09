@@ -129,7 +129,7 @@
     function checkDrawButtonState(kokeshiCount) {
       const drawButton = document.getElementById('draw');
 
-      if (kokeshiCount < 3000) {
+      if (kokeshiCount < 30) {
         drawButton.disabled = true;
         drawButton.style.backgroundColor = 'gray';
         drawButton.style.cursor = 'not-allowed';
