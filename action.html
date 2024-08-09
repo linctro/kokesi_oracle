@@ -259,7 +259,7 @@
 
       const link = document.createElement('a');
       link.href = `https://kokesi-omikuji.netlify.app/${currentImageUrl}`;
-      link.download = `${randomImage}`; // 保存するファイル名
+      link.download = randomImage; // 保存するファイル名
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
