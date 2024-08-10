@@ -210,7 +210,7 @@
   /* 影の設定 */
 }
 
-#tweetButton {
+#tweetButton #saveButton {
   display: inline-block;
 	padding: 8px 24px;
 	border-radius: 8px;
