@@ -258,16 +258,13 @@
 
     //ボタンを押してユーザーストレージへ画像保存
     document.getElementById('saveButton').addEventListener('click', function () {
-      if (currentImageUrl) {
-        const link = document.createElement('a');
-        link.href = currentImageUrl;
-        link.download = 'kokeshi_omikuji.png'; // 保存するファイル名
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-      } else {
-        console.error('画像のURLが設定されていません');
-      }
+
+      const link = document.createElement('a');
+      link.href = `https://kokesi-omikuji.netlify.app/${currentImageUrl}`;
+      link.download = `${randomImage}`; // 保存するファイル名
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
     });
 
     //ボタン押してXにページ移動
