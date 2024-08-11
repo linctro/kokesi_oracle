@@ -30,9 +30,9 @@
         <button type="button" id="draw" class="Buttons">引く<p class="Buttons-text">30本消費</p></button>
       </div>
       <div class="Action-Button-Draw">
-       <button type="button" id="Re-Draw" style="display: none;">もう１回</button>
-       <button type="button" id="saveButton" style="display: none;">保存する</button>
-       <button type="button" id="tweetButton" style="display: none;">Xに投稿する</button>
+        <button type="button" id="Re-Draw" style="display: none;">もう１回</button>
+        <button type="button" id="saveButton" style="display: none;">保存する</button>
+        <button type="button" id="tweetButton" style="display: none;">Xに投稿する</button>
       </div>
     </div>
 
@@ -258,16 +258,13 @@
 
     //ボタンを押してユーザーストレージへ画像保存
     document.getElementById('saveButton').addEventListener('click', function () {
-      if (currentImageUrl){
+
       const link = document.createElement('a');
-      link.href = currentImageUrl;
-      link.download = 'kokeshi_omikuji.png'; // 保存するファイル名
+      link.href = `https://kokesi-omikuji.netlify.app/${currentImageUrl}`;
+      link.download = `${randomImage}`; // 保存するファイル名
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
-      } else {
-        console.error('画像のURLが設定されていません');
-      }
     });
 
     //ボタン押してXにページ移動
