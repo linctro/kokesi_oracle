@@ -29,7 +29,7 @@
         <button type="button" id="button" class="Shake-Button">振る</button>
         <button type="button" id="draw" class="Buttons">引く<p class="Buttons-text">30本消費</p></button>
       </div>
-      <div class="Action-Button-Draw">
+      <div class="Action-Button-after">
         <button type="button" id="Re-Draw" style="display: none;">もう１回</button>
         <button type="button" id="saveButton" style="display: none;">保存する</button>
         <button type="button" id="tweetButton" style="display: none;">Xに投稿する</button>
@@ -107,7 +107,7 @@
 
       try {
         const response = await fetch(pointUrl, {
-          //method: 'PUT',
+          method: 'PUT',
           headers: {
             'content-type': 'application/json',
           },
@@ -234,6 +234,8 @@
         const newKokeshi = user.kokeshi - 30;
         console.log(`Current user kokeshi: ${user.kokeshi}, New kokeshi: ${newKokeshi}`); // デバッグ用ログ
         await updateKokeshi(user.objectId, newKokeshi);
+
+        displayPoints({ ...user, kokeshi: newKokeshi });
 
         // 金庫のこけしを30増やす
 
