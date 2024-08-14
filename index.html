@@ -26,10 +26,10 @@
           <label for="username">ユーザーID:</label>
           <input type="text" id="userId" placeholder="exsample@kokesi.com" required />
         </div>
-        <div class="Input-Pass">
+        <!--<div class="Input-Pass">
           <label for="pass">パスワード:</label>
           <input type="password" id="password" placeholder="パスワードを入力" required />
-        </div>
+        </div>-->
         <div class="Submit">
           <input type="submit" value="Sign in" />
         </div>
@@ -43,17 +43,17 @@
       event.preventDefault();
 
       const userId = document.getElementById('userId').value;
-      const password = document.getElementById('password').value;
+      //const password = document.getElementById('password').value;
 
       const applicationId = 'F836FFE2-AA5B-8A23-FF17-4DA921B9C900';
       const restApiKey = '2AD3A779-0802-4F6E-BC18-ED592E6BEAC1';
 
-      const whereClause = `id = '${userId}' AND password = '${password}'`;
+      const whereClause = `id = '${userId}'`; //AND password = '${password}'
       const encodedWhereClause = encodeURIComponent(whereClause);
 
       const url = `https://api.backendless.com/${applicationId}/${restApiKey}/data/UsersTable?where=${encodedWhereClause}`;
 
-      console.log('Login attempt', { userId, password });
+      console.log('Login attempt', { userId});
 
 
       try {
