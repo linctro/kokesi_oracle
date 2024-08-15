@@ -30,10 +30,14 @@
         <button type="button" id="draw" class="Buttons">引く<p class="Buttons-text">30本消費</p></button>
       </div>
       <div class="Action-Button-after">
-        <button type="button" id="Re-Draw" style="display: none;">もう１回</button>
-        <button type="button" id="saveButton" style="display: none;">保存する</button>
-        <button type="button" id="tweetButton" style="display: none;">Xに投稿する</button>
+        <div class="Action-Button-after-Style">
+          <button type="button" id="Re-Draw" style="display: none;">もう１回</button>
+          <button type="button" id="saveButton" style="display: none;">PC専用<p>保存ボタン</p></button>
+          <button type="button" id="tweetButton" style="display: none;">Xに投稿する</button>
+        </div>
+        <div id="Hint-Font-Style" style="display: none;">ヒント：画像を長押しで保存できるよ！</div>
       </div>
+
     </div>
 
 
@@ -213,7 +217,7 @@
       //Xへ投稿ボタンを表示する
       document.getElementById('tweetButton').style.display = 'inline-block';
       document.getElementById('saveButton').style.display = 'inline-block';
-
+      document.getElementById('Hint-Font-Style').style.display = 'inline-block';
     }
 
     draw.addEventListener('click', async function () {
