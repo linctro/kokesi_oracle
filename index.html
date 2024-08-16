@@ -9,7 +9,6 @@
   <link rel="stylesheet" href="./resources/styles/destyle.css" />
   <link rel="stylesheet" href="./resources/styles/style.css" />
 
-
 </head>
 
 <body>
@@ -26,7 +25,7 @@
           <label for="username">ユーザーID:</label>
           <input type="text" id="userId" placeholder="exsample@kokesi.com" required />
         </div>
-       
+
         <div class="Submit">
           <input type="submit" value="Sign in" />
         </div>
@@ -50,7 +49,7 @@
 
       const url = `https://api.backendless.com/${applicationId}/${restApiKey}/data/UsersTable?where=${encodedWhereClause}`;
 
-      console.log('Login attempt', { userId});
+      console.log('Login attempt', { userId });
 
 
       try {
@@ -104,6 +103,26 @@
         alert(error.message);
       }
 
+    });
+
+
+    document.addEventListener('DOMContentLoaded', (event) => {
+      // ページがロードされたときにフォームの内容を復元する
+      const savedUserId = localStorage.getItem('userId');
+
+      if (savedUserId) {
+        document.getElementById('userId').value = savedUserId;
+      }
+
+      // フォームの変更を監視し、変更があれば保存する
+      document.getElementById('loginForm').addEventListener('input', (event) => {
+        localStorage.setItem('userId', document.getElementById('userId').value);
+      });
+
+      // フォーム送信時にローカルストレージをクリアする（必要に応じて）
+      document.getElementById('loginForm').addEventListener('submit', (event) => {
+        localStorage.removeItem('userId');
+      });
     });
 
   </script>
