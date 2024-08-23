@@ -14,8 +14,12 @@
 <body>
   <div class="Content-Style">
     <header class="Top-Header">
-      <h1 class="Title">kokesi olacre</h1>
+      <h1 class="Title">こけしの泉Presents</h1>
+      <div class="Overlay"></div>
     </header>
+
+    <img src="resources/images/userID_manual.gif" alt="" class="UserIdManual-Img" />
+
     <article class="Main">
       <div class="Main-Title">こけしおみくじ</div>
     </article>
@@ -31,6 +35,10 @@
         </div>
       </div>
     </form>
+
+    <div class="UserIdManual">
+      <button class="UserIdManual-Button">ユーザーIDの調べ方はコチラ</button>
+    </div>
   </div>
   <script>
 
@@ -123,6 +131,24 @@
       document.getElementById('loginForm').addEventListener('submit', (event) => {
         localStorage.removeItem('userId');
       });
+    });
+
+    //manualの動き
+    const manual = document.querySelector(".UserIdManual-Img");
+    const manualButton = document.querySelector(".UserIdManual-Button");
+    const overlay = document.querySelector(".Overlay");
+
+    const toggleManual = () => {
+      manual.classList.toggle("ManualIsOpen");
+      overlay.classList.toggle("OverlayIsOpen");
+    }
+
+    manualButton.addEventListener("click", () => {
+      toggleManual()
+    });
+
+    overlay.addEventListener("click", () => {
+      toggleManual()
     });
 
   </script>
