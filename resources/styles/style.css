@@ -10,7 +10,8 @@
   height: 60px;
   justify-content: center;
   align-items: center;
-
+  font-family: Arial, Helvetica, sans-serif;
+  color: #006f86;
 }
 
 #kokeshiContainer {
@@ -34,6 +35,7 @@
   -webkit-text-stroke: 2px #fff;
   background-color: #f6c3b9;
   border-radius: 8px;
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
 }
 
 .Login-Form {
@@ -63,15 +65,6 @@
   border-bottom: 1px solid;
 }
 
-.Input-Pass {
-  display: flex;
-  justify-content: center;
-  width: 320px;
-  padding: 3px;
-  margin: 5px 0;
-  border-bottom: 1px solid;
-}
-
 .Submit {
   display: flex;
   justify-content: center;
@@ -80,6 +73,51 @@
   padding: 4px;
   border-radius: 8px;
   background-color: aqua;
+}
+
+.UserIdManual-Img {
+  position: fixed;
+  top: 61px;
+  left: -30px;
+  z-index: 20;
+  width: 450px;
+  transform: translateX(-420px);
+  transition: all 0.3s;
+}
+
+.UserIdManual {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+.UserIdManual-Button {
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #006f86;
+  text-decoration: underline;
+}
+
+.Overlay {
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+.ManualIsOpen {
+  transform: translateX(0px);
+}
+
+.OverlayIsOpen {
+  visibility: visible;
+  opacity: 1;
 }
 
 #Use-Button {
